@@ -1,0 +1,54 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: aliceblue;
+}
+
+nav{
+    text-align: center;
+    padding: 12px 0;
+    background-color: #dfdede;
+    border-bottom: solid #aaaaaa 1px;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    background-color: #9f9f9f;
+    padding: 4px 65px;
+    border:solid #4c4646 2px;
+    border-radius: 4px;
+}
+
+span {
+    display: block;
+  }
+  .canvas {
+    margin: 100px auto 100px;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .button {
+    width: 100px;
+    height: 100px;
+    margin: 28px 4px;
+    border: solid black 2px;
+    display: inline-block;
+  }
+  
+  #grey {
+    background: grey;
+  }
+  
+  #white {
+    background: white;
+  }
+  #blue {
+    background: blue;
+  }
+  #yellow {
+    background: yellow;
+  }
+  
