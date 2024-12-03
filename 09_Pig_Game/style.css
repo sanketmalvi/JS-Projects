@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    color: black;
+    display: flex;
+    background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+}
+    
+.player{
+    height: 22rem;
+    width: 20rem;
+    text-align: center;
+    align-content: center;
+    font-size: 18px;
+}
+
+.player-0{
+    background-color: rgb(114, 94, 227);
+}
+.player-1{
+    background-color: rgb(38, 82, 225);
+}
+
+.name{
+    position: relative;
+    top: -5rem;
+}
+
+.score{
+    position: relative;
+    top: -4rem;
+    font-size: 4rem;
+}
+
+.current{
+    background: #ff2222;
+    color: white;
+    margin: 0 6rem;
+    padding: 0.5rem 0;
+    border: none;
+    border-radius: 16px;
+}
+
+img{
+    position: absolute;
+    width: 5rem;
+}
+
+.btn{
+    position: absolute;
+    border-radius: 14px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+.btn--new{
+    top: 14rem;
+    padding: 4px 8px;
+}
+.btn--roll{
+    top: 27rem;
+    padding: 4px 12px;
+}
+.btn--hold{
+    top: 30rem;
+    padding: 2px 12px;
+}
+
+.hidden{
+    display: none;
+}
+
+.player--active{
+    background-color: rgb(95, 221, 148)
+}
+
+.player-winner{
+    background-color: rgb(46, 20, 20);
+    color: red;
+}

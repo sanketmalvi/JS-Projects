@@ -1,92 +1,74 @@
-let randomNum = parseInt(Math.random() * 100 + 1)
+'use strict';
 
-const submit = document.querySelector('#subt')
-const userInput = document.querySelector('#guessField')
-const guessSlot = document.querySelector('.guesses')
-const remaining = document.querySelector('.lastResult')
-const lowOrHi = document.querySelector('.lowOrHi')
-const startOver = document.querySelector('.resultParas')
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+let score = 20;
+let highscore = 0;
 
 
-const p = document.createElement('p')
-let prevGuess = []; 
-let numGuess = 1;
+// Display Message Function
+const displayMessage = function (message) {
+  document.querySelector('.message').textContent = message;
+};
 
-let playGame = true;
+// Display Score Function
+const displayScore = function (score) {
+    document.querySelector('.score').textContent = score;
+};
 
-if (playGame) {
-    submit.addEventListener('click', (e)=>{
-        e.preventDefault();
-        const guess = parseInt(userInput.value);
-        validateGuess(guess);
-    })
-}
 
-function validateGuess(guess){
-    if (isNaN(guess)) {
-        alert('Please Enter a valid number')
-    }else if (guess < 1) {
-        alert('Please Enter a number more than 1')
-    }else if (guess > 100){
-        alert('Please Enter a number less than 100')
-    }else{
-        prevGuess.push(guess)
-        if(numGuess > 10){
-            displayGuess(guess)
-            displayMessage(`Game Over. Random number was ${randomNum}`)
-            endGame()
-        } else{
-            displayGuess(guess)
-            checkGuess(guess)
-        }
+// Function: guess 2 digits only
+document.querySelector('.guess').addEventListener('input', (e) => {
+    if (e.target.value.length > 2 ) {
+      e.target.value = e.target.value.slice(0, 2);
+  }
+});
+
+
+
+// Main function
+document.querySelector('.check').addEventListener('click', function (){
+  let guess = Number(document.querySelector('.guess').value);
+
+  // When there is no input
+  if (!guess) {
+    displayMessage('⛔️ No number!');
+  } 
+  // When player wins
+  else if (guess === secretNumber) {
+    displayMessage('🎉 Correct Number!');
+    document.querySelector('.number').textContent = secretNumber;
+    document.querySelector('body').style.backgroundColor = '#60b347';
+    document.querySelector('.number').style.width = '30rem';
+
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
     }
-}
+  } 
 
-function checkGuess(guess){
-    if(guess === randomNum){
-        displayMessage(`Right Guess. Hoorrayyyy`)
-        endGame();
-    } else if (guess < randomNum){
-        displayMessage(`Number is TOO LOW`)
-    }else if (guess > randomNum){
-        displayMessage(`Number is TOO HIGH`)
+  else if (guess !== secretNumber) {
+    document.querySelector('.guess').value = '';
+    if (score > 1) {
+      displayMessage(guess > secretNumber ? 'Too high!' : 'Too low!');
+      score--;
+      displayScore(score)
+    } 
+    else {
+      displayMessage('💥 You lost the game!');
+      displayScore(0);
     }
-}
+  }
+});
 
-function displayGuess(guess){
-    userInput.value = ''
-    guessSlot.innerHTML += ` ${guess}, `
-    numGuess++
-    remaining.innerHTML = `${11 - numGuess}`
-}
 
-function displayMessage(msg){
-    lowOrHi.innerHTML = `<h3>${msg}</h3>`
-}
-
-function endGame(){
-    userInput = ''
-    userInput.setAttribute('disabled', '')
-    p.classList.add('button')
-    p.innerHTML = `<h2 id = 'newGame'>Start New Game</h2>`
-    startOver.appendChild(p)
-    playGame = false;
-    newGame();
-}
-
-function newGame(){
-    const newGameButton = document.getElementById(newGame);
-    newGameButton.addEventListener('click', (e)=>{
-        
-        randomNum = parseInt(Math.random() * 100 + 1);
-        prevGuess = [];
-        numGuess = 1;
-        guessSlot.innerHTML = '' 
-        remaining.innerHTML = `${11 - numGuess}`
-        userInput.removeAttribute('disabled');
-        startOver.removeChild(p);
-        playGame = true;
-    })
- }
-    
-    
+// Restart the Game
+document.querySelector('.again').addEventListener('click', () => {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  displayMessage('Start guessing...');
+  displayScore(score)
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.guess').value = '';
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
+});

@@ -1,4 +1,5 @@
 const buttons = document.querySelectorAll('.button');
+// console.log(buttons);
 const body = document.querySelector('body');
 
 
@@ -21,3 +22,12 @@ buttons.forEach ( function (btn) {
         }
     });
 });
+
+
+// Short Way
+
+// buttons.forEach((btn) => {
+//   btn.addEventListener('click', (e) => {
+//     body.style.background = e.target.id;
+//   });
+// });
