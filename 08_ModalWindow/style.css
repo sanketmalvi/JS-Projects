@@ -17,6 +17,15 @@ body{
     background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
 }
 
+.main-content {
+    filter: none; /* Default state */
+    transition: filter 0.3s ease;
+}
+
+.main-content.blurred {
+    filter: blur(2px);
+}
+
 .show-modal{
     font-weight: 600;
     margin: 5rem 2rem;
