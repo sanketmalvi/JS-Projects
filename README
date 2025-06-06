@@ -1,0 +1,52 @@
+# 🛠️ JavaScript Practice Projects
+
+Welcome to my **JavaScript Projects** repository!  
+This is a collection of small, fun, and beginner-to-intermediate level projects built to **practice JavaScript concepts** through hands-on development.
+
+> ⚡ Built to reinforce my learning, improve logic, and get better at DOM manipulation & real-world JS usage.
+
+---
+
+## 🧩 Projects Included
+
+| Project Name            | Description                                                |
+| ----------------------- | ---------------------------------------------------------- |
+| 🎨 **Color Switcher**   | Click to switch between different background colors        |
+| 🧮 **BMI Calculator**   | Calculate Body Mass Index based on user input              |
+| ⏰ **Digital Clock**    | Live digital clock that updates every second               |
+| 🎯 **Guess the Number** | A number guessing game with feedback and scoring           |
+| 🌈 **Unlimited Colors** | Generates and displays random colors endlessly             |
+| ⌨️ **Keyboard Press**   | Detects and shows which keyboard key was pressed           |
+| 🪟 **Modal Window**     | A basic modal popup using HTML/CSS/JS                      |
+| 🐷 **Pig Game**         | Dice-based game with two-player turn logic                 |
+| 🏦 **Bankist App**      | Simulates basic banking UI with login, transfers, and more |
+
+---
+
+## 🔧 Tech Used
+
+- HTML
+- CSS
+- JavaScript (Vanilla JS)
+- DOM Manipulation
+- Event Handling
+
+---
+
+## 🎯 Purpose
+
+This repository was created to:
+
+- Strengthen JavaScript fundamentals
+- Practice DOM manipulation and event handling
+- Build real, working features with minimal boilerplate
+- Improve project structure and UI behavior
+
+---
+
+## 🚀 How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sanketmalvi/JS-Projects.git
+   ```
